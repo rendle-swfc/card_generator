@@ -42483,7 +42483,7 @@ pP(a,b){return this.ahA(a,b)},
 ahA(a,b){var s=0,r=A.R(t.H),q=1,p=[],o=this,n,m,l,k,j,i,h,g,f,e
 var $async$pP=A.N(function(c,d){if(c===1){p.push(d)
 s=q}for(;;)switch(s){case 0:o.X(new A.ajx(o))
-n=A.aLs("POST",A.lJ("http://localhost:5000/process"))
+n=A.aLs("POST",A.lJ("https://card-generator-um75.onrender.com"))
 n.x.m(0,"alignment",o.w)
 n.x.m(0,"rarity",o.x)
 n.x.m(0,"unit_category",o.at)
