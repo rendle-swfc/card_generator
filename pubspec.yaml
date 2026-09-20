@@ -1,0 +1,30 @@
+name: card_generator
+description: A Flutter Web application for building custom SWFC cards.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  file_picker: ^8.1.4
+  flutter:
+    sdk: flutter
+  http: ^1.1.0
+  http_parser: ^4.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/frames/
+
+  fonts:
+    - family: CardFont
+      fonts:
+        - asset: assets/fonts/card_font.ttf
