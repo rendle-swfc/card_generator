@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'card_builder_screen.dart';
+import 'card_builder_ui.dart';
 
 void main() {
   runApp(const CardGeneratorApp());
