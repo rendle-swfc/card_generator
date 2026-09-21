@@ -203,13 +203,21 @@ class _CardBuilderScreenState extends State<CardBuilderScreen>
         final Uint8List pngBytes = byteData.buffer.asUint8List();
         final fileName = CardDataUtils.generateCardId(
             _cardName, _versionName, _rarity);
-
+        if (kIsWeb) {
         await FileSaver.instance.saveFile(
           name: fileName,
           bytes: pngBytes,
           ext: 'png',
           mimeType: MimeType.png,
         );
+        } else {
+          await FileSaver.instance.saveAs(
+            name: fileName,
+            bytes: pngBytes,
+            ext: 'png',
+            mimeType: MimeType.png
+          );
+        }
 
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -700,7 +708,7 @@ class _CardBuilderScreenState extends State<CardBuilderScreen>
               child: TextFormField(
                 initialValue: _evoMaxAcc.toString(),
                 decoration: const InputDecoration(
-                    labelText: "Max Acc", border: OutlineInputBorder()),
+                    labelText: "Acc", border: OutlineInputBorder()),
                 style: const TextStyle(color: Colors.white),
                 keyboardType: TextInputType.number,
                 onChanged: (val) =>
@@ -712,7 +720,7 @@ class _CardBuilderScreenState extends State<CardBuilderScreen>
               child: TextFormField(
                 initialValue: _evoMaxEva.toString(),
                 decoration: const InputDecoration(
-                    labelText: "Max Eva", border: OutlineInputBorder()),
+                    labelText: "Eva", border: OutlineInputBorder()),
                 style: const TextStyle(color: Colors.white),
                 keyboardType: TextInputType.number,
                 onChanged: (val) =>

@@ -60,7 +60,7 @@ class CardDataUtils {
   }
 
   static int calculateEvo0AccEva(int evoMaxAccEva) {
-    return (evoMaxAccEva / 1.10).round();
+    return (evoMaxAccEva).round();
   }
 
   static String generateCardId(String cardName, String versionName, String rarity) {
@@ -157,6 +157,10 @@ class CardDataUtils {
         ? ''
         : '\n    additionalWeapons: [${additionalWeapons.map((w) => 'WeaponType.${w.name}').join(', ')}],';
 
+    String tradeValueStr = rarity == '05'
+      ? '\n baseTradeValue: $baseTradeValue,'
+      : "";
+
     return '''const CardMasterData(
     id: '$cardId',
     name: '$fullName',
@@ -172,9 +176,8 @@ class CardDataUtils {
     range: RangeType.${range.name},
     attackPattern: AttackPattern.${attackPattern.name},      
     skillId: '$skillId',
-    tags: [formattedTags],addWeaponsStr
-    weaponType: WeaponType.${weaponType.name}, 
-    baseTradeValue: $baseTradeValue,
+    tags: [$formattedTags],
+    weaponType: WeaponType.${weaponType.name},$addWeaponsStr$tradeValueStr
 ),''';
   }
 }
