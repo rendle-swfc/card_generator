@@ -1,1 +1,0 @@
- C:\\Users\\ryane\\card_generator\\build\\de13b54bdc258e66ecf446b56baa428e\\dart_build_result.json:  C:\\Users\\ryane\\card_generator\\.dart_tool\\package_config.json C:\\Users\\ryane\\card_generator\\pubspec.yaml C:\\src\\flutter\\bin\\cache\\dart-sdk\\version c:\\users\\ryane\\card_generator\\.dart_tool\\package_config.json
