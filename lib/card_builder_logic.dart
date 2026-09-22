@@ -76,8 +76,9 @@ class CardDataUtils {
           words.map((w) => w.isNotEmpty ? w[0].toUpperCase() : '').join('');
     }
 
+    // FIX: Include both version initials AND rarity number in the ID
     if (versionInitials.isNotEmpty) {
-      return '${cleanChar}_$versionInitials';
+      return '${cleanChar}_${versionInitials}_$rarity';
     } else {
       return '${cleanChar}_$rarity';
     }
@@ -121,9 +122,13 @@ class CardDataUtils {
     required String freeTextTags,
   }) {
     final String cardId = generateCardId(cardName, versionName, rarity);
-    final String fullName = versionName.trim().isNotEmpty
-        ? 'cardName.trim()({versionName.trim()})'
-        : cardName.trim();
+
+    // FIX: Added proper $ interpolation and outer parentheses
+    final String cleanName = cardName.trim();
+    final String cleanVersion = versionName.trim();
+    final String fullName = cleanVersion.isNotEmpty
+        ? '$cleanName ($cleanVersion)'
+        : cleanName;
 
     final int evo0Atk = calculateEvo0Stat(evoMaxAtk);
     final int evo0Def = calculateEvo0Stat(evoMaxDef);
@@ -158,7 +163,7 @@ class CardDataUtils {
         : '\n    additionalWeapons: [${additionalWeapons.map((w) => 'WeaponType.${w.name}').join(', ')}],';
 
     String tradeValueStr = rarity == '05'
-      ? '\n baseTradeValue: $baseTradeValue,'
+      ? '\n  baseTradeValue: $baseTradeValue,'
       : "";
 
     return '''const CardMasterData(
