@@ -7783,27 +7783,27 @@ r=A.id(o,n,"")
 if(r.length!==0){q=B.d.LB(r,A.e6("\\s+",!0,!1))
 p=new A.a4(q,new A.a00(),A.Y(q).i("a4<1,x>")).bv(0,"")}else p=""
 o=s+"_"
-if(p.length!==0)return o+p
+if(p.length!==0)return o+p+"_"+c
 else return o+c},
 aJA(a){switch(a){case"01":return B.Pw
 case"02":return B.Px
 case"03":return B.Py
 case"04":return B.Pz
 case"05":default:return B.PA}},
-aJz(a,b,c,d,e,f,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2){var s,r,q,p,o,n=A.avO(a0,b1,a8),m=B.d.fm(b1).length!==0?"cardName.trim()({versionName.trim()})":B.d.fm(a0),l=A.a0_(a3),k=A.a0_(a4),j=B.i.aE(a2),i=B.i.aE(a5),h=t.s,g=A.c([],h)
-if(b==="ds")g.push("Dark Side")
-if(b==="ls")g.push("Light Side")
-if(b==="neutral")g.push("Neutral")
-B.b.W(g,a9)
-if(a1&&B.d.fm(a6).length!==0)B.b.W(g,new A.a4(A.c(a6.split(","),h),new A.a01(),t.a4).x3(0,new A.a02()))
-h=a7.b
-s=h[0].toUpperCase()+B.d.dt(h,1)
-if(!B.b.q(g,s))g.push(s)
-r=new A.a4(g,new A.a03(),t.a4).bv(0,", ")
+aJz(a,b,c,d,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4){var s,r,q,p,o,n=A.avO(a2,b3,b0),m=B.d.fm(a2),l=B.d.fm(b3),k=l.length!==0?m+" ("+l+")":m,j=A.a0_(a5),i=A.a0_(a6),h=B.i.aE(a4),g=B.i.aE(a7),f=t.s,e=A.c([],f)
+if(b==="ds")e.push("Dark Side")
+if(b==="ls")e.push("Light Side")
+if(b==="neutral")e.push("Neutral")
+B.b.W(e,b1)
+if(a3&&B.d.fm(a8).length!==0)B.b.W(e,new A.a4(A.c(a8.split(","),f),new A.a01(),t.a4).x3(0,new A.a02()))
+f=a9.b
+s=f[0].toUpperCase()+B.d.dt(f,1)
+if(!B.b.q(e,s))e.push(s)
+r=new A.a4(e,new A.a03(),t.a4).bv(0,", ")
 q=B.c.bQ(d,1)===0?B.i.k(B.c.fk(d)):B.c.k(d)
 p=a.length===0?"":"\n    additionalWeapons: ["+new A.a4(a,new A.a04(),A.Y(a).i("a4<1,x>")).bv(0,", ")+"],"
-o=a8==="05"?"\n baseTradeValue: "+e+",":""
-return"const CardMasterData(\n    id: '"+n+"',\n    name: '"+m+"',\n    assetPath: 'assets/cards/"+n+".png',\n    rarity: Rarity."+A.aJA(a8).b+", \n    capacity: "+f+",\n    maxLevelEvo0HP: 1000,\n    maxLevelEvo0Attack: "+l+",\n    maxLevelEvo0Defense: "+k+",\n    accuracy: "+j+", \n    evasion: "+i+",    \n    attacksPerTurn: "+q+", \n    range: RangeType."+h+",\n    attackPattern: AttackPattern."+c.b+",      \n    skillId: '"+b0+"',\n    tags: ["+r+"],\n    weaponType: WeaponType."+b2.b+","+p+o+"\n),"},
+o=b0==="05"?"\n  baseTradeValue: "+a0+",":""
+return"const CardMasterData(\n    id: '"+n+"',\n    name: '"+k+"',\n    assetPath: 'assets/cards/"+n+".png',\n    rarity: Rarity."+A.aJA(b0).b+", \n    capacity: "+a1+",\n    maxLevelEvo0HP: 1000,\n    maxLevelEvo0Attack: "+j+",\n    maxLevelEvo0Defense: "+i+",\n    accuracy: "+h+", \n    evasion: "+g+",    \n    attacksPerTurn: "+q+", \n    range: RangeType."+f+",\n    attackPattern: AttackPattern."+c.b+",      \n    skillId: '"+b2+"',\n    tags: ["+r+"],\n    weaponType: WeaponType."+b4.b+","+p+o+"\n),"},
 J8(a,b,c,d,e,f,g,h,i){var s=0,r=A.O(t.H3),q,p,o,n,m,l
 var $async$J8=A.J(function(j,k){if(j===1)return A.L(k,r)
 for(;;)switch(s){case 0:n=A.aMs("POST",A.lw("https://card-generator-um75.onrender.com/process"))
